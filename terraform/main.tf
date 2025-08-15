@@ -14,6 +14,7 @@ module "vpc" {
   cidr = var.vpc_cidr
 
   azs             = local.azs
+  
   public_subnets  = local.public_subnets
   private_subnets = local.private_subnets
 
@@ -80,3 +81,13 @@ module "retail_app_eks" {
 
   tags = local.common_tags
 }
+
+# =============================================================================
+# INCLUDE ADDONS MODULE (from addons.tf)
+# =============================================================================
+# The addons are defined in addons.tf and will be automatically included
+
+# =============================================================================
+# INCLUDE ARGOCD MODULE (from argocd.tf) 
+# =============================================================================
+# The ArgoCD resources are defined in argocd.tf and will be automatically included
